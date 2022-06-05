@@ -1,15 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=US-ASCII"
-    pageEncoding="US-ASCII"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>First JSP</title>
-</head>
-<%@ page import="java.util.Date" %>
+<head><title>Example 2 in JSP</title></head>
 <body>
-<h3>Hi Pankaj</h3><br>
-<strong>Current Time is</strong>: <%=new Date() %>
-
+<h1> Lets try your luck here!  </h1>
+<%
+double num = Math.random();
+if (num > 0.95) {
+%>
+<h2>You'll have a lucky day!</h2><p>The number you got in your stars is: <%= num %> </p>
+<%
+} else {
+%>
+<h2>Well, life goes on ... </h2><p>The number you got in your stars is: <%= num %> </p>
+<%
+}
+%>
+<a href="<%= request.getRequestURI() %>"><b>Click here to try Again</b></a>
 </body>
 </html>
